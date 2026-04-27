@@ -14,40 +14,844 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================
+       ZEDE ETHIOPIAN INSTANT FOODS
+       Complete Stylesheet
+       ============================================ */
+
+    :root {
+      --color-terracotta: #C67B4B;
+      --color-terracotta-hover: #b5683a;
+      --color-deep-green: #2D5A27;
+      --color-spice-red: #B33A2A;
+      --color-cream: #FDF6E3;
+      --color-dark-brown: #3E2C1F;
+      --color-soft-white: #FFFBF2;
+      --color-border-light: #E7D7C0;
+      --color-light-bg: #faf3e8;
+      --color-footer-bg: #2e2a24;
+      --color-footer-text: #e7d7c0;
+      --color-footer-link: #dbbc8c;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Lato', sans-serif;
+      --shadow-card: 0 12px 28px rgba(0, 0, 0, 0.04);
+      --shadow-card-hover: 0 20px 35px rgba(139, 94, 60, 0.12);
+      --border-radius: 24px;
+      --border-radius-btn: 40px;
+      --transition: 0.25s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-cream);
+      color: var(--color-dark-brown);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
+
+    .mt-40 {
+      margin-top: 40px;
+    }
+
+    .p-20 {
+      padding: 20px;
+    }
+
+    .bg-light {
+      background: var(--color-soft-white);
+      border-radius: var(--border-radius);
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section--light {
+      background: var(--color-light-bg);
+    }
+
+    .section__title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--color-deep-green);
+      margin-bottom: 16px;
+    }
+
+    .section__title--left {
+      text-align: left;
+    }
+
+    .section__subtitle {
+      text-align: center;
+      color: #5f4a34;
+      max-width: 650px;
+      margin: 0 auto 45px;
+      font-size: 1.15rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: var(--border-radius-btn);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background var(--transition), transform 0.2s, color var(--transition);
+      cursor: pointer;
+      font-size: 1rem;
+      border: none;
+      font-family: var(--font-body);
+    }
+
+    .btn--primary {
+      background: var(--color-terracotta);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: var(--color-terracotta-hover);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .btn--outline {
+      background: transparent;
+      border: 2px solid var(--color-terracotta);
+      color: var(--color-terracotta);
+    }
+
+    .btn--outline:hover {
+      background: var(--color-terracotta);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn--text {
+      background: transparent;
+      color: var(--color-terracotta);
+      padding: 8px 0;
+      font-weight: 600;
+    }
+
+    .btn--text:hover {
+      color: var(--color-terracotta-hover);
+    }
+
+    .btn--lg {
+      padding: 16px 36px;
+      font-size: 1.1rem;
+    }
+
+    .btn--full {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Header */
+    .header {
+      background: var(--color-soft-white);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav__logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-deep-green);
+    }
+
+    .nav__logo--highlight {
+      color: var(--color-terracotta);
+    }
+
+    .nav__menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav__link {
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--color-dark-brown);
+      position: relative;
+      transition: color var(--transition);
+      cursor: pointer;
+    }
+
+    .nav__link:hover,
+    .nav__link--active {
+      color: var(--color-terracotta);
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: var(--color-terracotta);
+      transition: width 0.3s;
+    }
+
+    .nav__link:hover::after,
+    .nav__link--active::after {
+      width: 100%;
+    }
+
+    .nav__toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-dark-brown);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(103deg, rgba(253, 246, 227, 0.92) 0%, rgba(253, 246, 227, 0.7) 70%);
+      padding: 90px 0;
+      border-bottom: 2px solid var(--color-border-light);
+    }
+
+    .hero__content {
+      max-width: 650px;
+    }
+
+    .hero__title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--color-deep-green);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero__description {
+      font-size: 1.3rem;
+      color: #4a3a2a;
+      margin-bottom: 32px;
+    }
+
+    .hero__buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Features Bar */
+    .features-bar {
+      background: var(--color-deep-green);
+      padding: 18px 0;
+      color: #fff;
+    }
+
+    .features-bar__grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .features-bar__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+
+    .features-bar__icon {
+      font-size: 1.3rem;
+      color: #F9D170;
+    }
+
+    /* About Snippet */
+    .about-snippet__row {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .about-snippet__text {
+      flex: 1 1 400px;
+    }
+
+    .about-snippet__text p {
+      margin-bottom: 14px;
+    }
+
+    .about-snippet__image {
+      flex: 1 1 400px;
+      background: #e7cfb0;
+      border-radius: var(--border-radius);
+      height: 290px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-snippet__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-snippet__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      background: #faead7;
+      color: #8b5a2b;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Product Cards */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .product-grid--full {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 24px 16px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #f0e4d0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .product-card__icon {
+      font-size: 2.8rem;
+      color: var(--color-terracotta);
+      margin-bottom: 12px;
+    }
+
+    .product-card__title {
+      font-size: 1.5rem;
+      color: var(--color-dark-brown);
+      margin-bottom: 6px;
+    }
+
+    .product-card__tags {
+      margin: 10px 0 14px;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .tag--vegan {
+      background: #e8f5e9;
+      color: #2d5a27;
+    }
+
+    .tag--meat {
+      background: #fce4ec;
+      color: #b33a2a;
+    }
+
+    .tag--mild,
+    .tag--medium {
+      background: #fff3e0;
+      color: #c67b4b;
+    }
+
+    .tag--hot {
+      background: #fbe9e7;
+      color: #b33a2a;
+    }
+
+    .tag--none {
+      background: #f5f5f5;
+      color: #666;
+    }
+
+    .product-card__description {
+      font-size: 0.95rem;
+      color: #5f4a34;
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      flex-wrap: wrap;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .step {
+      flex: 0 0 200px;
+    }
+
+    .step__number {
+      background: var(--color-terracotta);
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 auto 16px;
+      font-family: var(--font-heading);
+    }
+
+    .step__title {
+      margin-bottom: 6px;
+      color: var(--color-deep-green);
+    }
+
+    /* Testimonials */
+    .testimonials__grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px;
+      max-width: 380px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      font-style: italic;
+    }
+
+    .testimonial-card__quote {
+      color: var(--color-terracotta);
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .testimonial-card__text {
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card__author {
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: var(--color-soft-white);
+      padding: 50px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .page-header__title {
+      font-size: 2.8rem;
+      color: var(--color-deep-green);
+    }
+
+    .page-header__subtitle {
+      color: #5f4a34;
+      font-size: 1.15rem;
+      margin-top: 8px;
+    }
+
+    /* Promise Grid */
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .promise-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #f0e4d0;
+    }
+
+    .promise-card__icon {
+      font-size: 2.5rem;
+      color: var(--color-terracotta);
+      margin-bottom: 14px;
+    }
+
+    .promise-card h4 {
+      color: var(--color-deep-green);
+      margin-bottom: 8px;
+    }
+
+    /* Contact Layout */
+    .contact-layout {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1 1 300px;
+      background: var(--color-soft-white);
+      padding: 32px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border-light);
+    }
+
+    .contact-info__heading {
+      font-size: 1.6rem;
+      color: var(--color-deep-green);
+      margin-bottom: 20px;
+    }
+
+    .contact-info__item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    .contact-info__item i {
+      color: var(--color-terracotta);
+      width: 20px;
+      text-align: center;
+    }
+
+    .contact-info__note {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--color-border-light);
+      color: var(--color-terracotta);
+    }
+
+    .contact-form {
+      flex: 2 1 400px;
+      background: #fff;
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-form__heading {
+      font-size: 1.6rem;
+      color: var(--color-deep-green);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--color-dark-brown);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-terracotta);
+    }
+
+    .form-feedback {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      display: none;
+    }
+
+    /* Recipe Cards */
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .recipe-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #f0e4d0;
+    }
+
+    .recipe-card__image {
+      height: 150px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0dbb0;
+    }
+
+    .recipe-card h3 {
+      color: var(--color-deep-green);
+      margin-bottom: 8px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      padding: 50px 0 25px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 35px;
+    }
+
+    .footer__logo {
+      color: #fff;
+      font-family: var(--font-heading);
+    }
+
+    .footer__logo span {
+      color: var(--color-terracotta);
+    }
+
+    .footer__tagline {
+      font-size: 0.9rem;
+      margin-top: 6px;
+      opacity: 0.8;
+    }
+
+    .footer__heading {
+      color: #fff;
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+
+    .footer__links ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer__links a {
+      color: var(--color-footer-link);
+      transition: color var(--transition);
+      cursor: pointer;
+    }
+
+    .footer__links a:hover {
+      color: #fff;
+    }
+
+    .footer__contact p {
+      margin-bottom: 8px;
+    }
+
+    .footer__contact i {
+      margin-right: 8px;
+      color: var(--color-terracotta);
+    }
+
+    .footer__bottom {
+      text-align: center;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #5b4e3e;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Page visibility */
+    .page {
+      display: none;
+    }
+
+    .page--active {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav__menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+        padding: 20px 0;
+        background: var(--color-soft-white);
+      }
+
+      .nav__menu.show {
+        display: flex;
+      }
+
+      .nav__toggle {
+        display: block;
+      }
+
+      .hero__title {
+        font-size: 2.5rem;
+      }
+
+      .section__title {
+        font-size: 2rem;
+      }
+
+      .about-snippet__row {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero__title {
+        font-size: 2rem;
+      }
+
+      .hero__description {
+        font-size: 1.1rem;
+      }
+
+      .features-bar__grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
   
-  <!-- ==================== HEADER / NAVIGATION ==================== -->
-  <header class="header" id="header">
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
     <div class="container">
       <nav class="nav">
-        <!-- Logo -->
-        <a href="index.html" class="nav__logo">
+        <a href="#" class="nav__logo" onclick="navigateTo('home'); return false;">
           ZEDE <span class="nav__logo--highlight">Ethiopian</span>
         </a>
         
-        <!-- Navigation Links - FIXED to point to separate pages -->
         <ul class="nav__menu" id="nav-menu">
           <li class="nav__item">
-            <a href="index.html" class="nav__link nav__link--active">Home</a>
+            <a href="#" class="nav__link nav__link--active" onclick="navigateTo('home'); return false;" data-page="home">Home</a>
           </li>
           <li class="nav__item">
-            <a href="products.html" class="nav__link">Products</a>
+            <a href="#" class="nav__link" onclick="navigateTo('products'); return false;" data-page="products">Products</a>
           </li>
           <li class="nav__item">
-            <a href="about.html" class="nav__link">About</a>
+            <a href="#" class="nav__link" onclick="navigateTo('about'); return false;" data-page="about">About</a>
           </li>
           <li class="nav__item">
-            <a href="recipes.html" class="nav__link">Recipes</a>
+            <a href="#" class="nav__link" onclick="navigateTo('recipes'); return false;" data-page="recipes">Recipes</a>
           </li>
           <li class="nav__item">
-            <a href="contact.html" class="nav__link">Contact</a>
+            <a href="#" class="nav__link" onclick="navigateTo('contact'); return false;" data-page="contact">Contact</a>
           </li>
         </ul>
         
-        <!-- Mobile Menu Toggle -->
         <div class="nav__toggle" id="nav-toggle">
           <i class="fas fa-bars"></i>
         </div>
@@ -55,10 +859,10 @@
     </div>
   </header>
 
-  <!-- ==================== MAIN CONTENT ==================== -->
-  <main>
+  <!-- ==================== PAGE: HOME ==================== -->
+  <main id="page-home" class="page page--active">
     
-    <!-- ========== HERO SECTION ========== -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
         <div class="hero__content">
@@ -67,10 +871,10 @@
             Authentic Ethiopian flavors — vegan, gluten-free, and made with nothing artificial. Just add hot water and enjoy.
           </p>
           <div class="hero__buttons">
-            <a href="products.html" class="btn btn--primary">
+            <a href="#" class="btn btn--primary" onclick="navigateTo('products'); return false;">
               <i class="fas fa-utensils"></i> Explore Products
             </a>
-            <a href="contact.html" class="btn btn--outline">
+            <a href="#" class="btn btn--outline" onclick="navigateTo('contact'); return false;">
               <i class="fas fa-map-marker-alt"></i> Where to Buy
             </a>
           </div>
@@ -78,50 +882,28 @@
       </div>
     </section>
 
-    <!-- ========== FEATURES BAR ========== -->
+    <!-- Features Bar -->
     <div class="features-bar">
       <div class="container">
         <div class="features-bar__grid">
-          <div class="features-bar__item">
-            <i class="fas fa-clock features-bar__icon"></i>
-            <span>Ready in 5 Minutes</span>
-          </div>
-          <div class="features-bar__item">
-            <i class="fas fa-leaf features-bar__icon"></i>
-            <span>100% Vegan Options</span>
-          </div>
-          <div class="features-bar__item">
-            <i class="fas fa-wheat-awn-circle-exclamation features-bar__icon"></i>
-            <span>Gluten Free</span>
-          </div>
-          <div class="features-bar__item">
-            <i class="fas fa-ban features-bar__icon"></i>
-            <span>No Preservatives</span>
-          </div>
-          <div class="features-bar__item">
-            <i class="fas fa-palette features-bar__icon"></i>
-            <span>No Artificial Colors</span>
-          </div>
-          <div class="features-bar__item">
-            <i class="fas fa-oil-can features-bar__icon"></i>
-            <span>No Added Oil</span>
-          </div>
+          <div class="features-bar__item"><i class="fas fa-clock features-bar__icon"></i><span>Ready in 5 Minutes</span></div>
+          <div class="features-bar__item"><i class="fas fa-leaf features-bar__icon"></i><span>100% Vegan Options</span></div>
+          <div class="features-bar__item"><i class="fas fa-wheat-awn-circle-exclamation features-bar__icon"></i><span>Gluten Free</span></div>
+          <div class="features-bar__item"><i class="fas fa-ban features-bar__icon"></i><span>No Preservatives</span></div>
+          <div class="features-bar__item"><i class="fas fa-palette features-bar__icon"></i><span>No Artificial Colors</span></div>
+          <div class="features-bar__item"><i class="fas fa-oil-can features-bar__icon"></i><span>No Added Oil</span></div>
         </div>
       </div>
     </div>
 
-    <!-- ========== ABOUT SNIPPET ========== -->
+    <!-- About Snippet -->
     <section class="about-snippet section">
       <div class="container">
         <div class="about-snippet__row">
           <div class="about-snippet__text">
             <h2 class="section__title section__title--left">Our Story</h2>
-            <p>
-              <strong>Zede Ethiopian Instant Foods</strong> brings the rich, bold flavors of Ethiopia to your table — without the wait. Born in Addis Ababa and crafted with care by <strong>Leuleo Instant Foods</strong>, our meals let you enjoy traditional stews, porridges, and more in just five minutes.
-            </p>
-            <p>
-              Whether you're at home, at work, or on the trail, Zede makes authentic Ethiopian cuisine hassle-free. Our tagline says it all: <em>HEPAATREY & MYRITOM GOTHT — Tasty, Instant and Hassle Free.</em>
-            </p>
+            <p><strong>Zede Ethiopian Instant Foods</strong> brings the rich, bold flavors of Ethiopia to your table — without the wait. Born in Addis Ababa and crafted with care by <strong>Leuleo Instant Foods</strong>.</p>
+            <p>Our tagline: <em>HEPAATREY & MYRITOM GOTHT — Tasty, Instant and Hassle Free.</em></p>
             <div class="about-snippet__badges">
               <span class="badge"><i class="fas fa-check-circle"></i> Vegan</span>
               <span class="badge"><i class="fas fa-check-circle"></i> Gluten Free</span>
@@ -130,168 +912,300 @@
               <span class="badge"><i class="fas fa-check-circle"></i> No Added Oil</span>
               <span class="badge"><i class="fas fa-check-circle"></i> No Added Colors</span>
             </div>
-            <a href="about.html" class="btn btn--text mt-20">Learn More About Us <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="btn btn--text mt-20" onclick="navigateTo('about'); return false;">Learn More About Us <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="about-snippet__image">
-            <img src="images/about-food.jpg" alt="Ethiopian traditional food" onerror="this.style.display='none'; this.parentElement.style.background='#e7cfb0';">
-          </div>
+          <div class="about-snippet__image"></div>
         </div>
       </div>
     </section>
 
-    <!-- ========== BESTSELLERS ========== -->
+    <!-- Bestsellers -->
     <section class="products-preview section section--light">
       <div class="container">
         <h2 class="section__title">Our Bestsellers</h2>
-        <p class="section__subtitle">
-          Authentic instant meals crafted for flavor and convenience. Just add hot water.
-        </p>
-        
+        <p class="section__subtitle">Authentic instant meals crafted for flavor and convenience. Just add hot water.</p>
         <div class="product-grid">
-          <!-- Product 1: Lentil Stew -->
           <div class="product-card">
-            <div class="product-card__icon">
-              <i class="fas fa-seedling"></i>
-            </div>
+            <div class="product-card__icon"><i class="fas fa-seedling"></i></div>
             <h3 class="product-card__title">Lentil Stew</h3>
-            <div class="product-card__tags">
-              <span class="tag tag--vegan">Vegan</span>
-              <span class="tag tag--mild">Mild 🌶️</span>
-            </div>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--mild">Mild 🌶️</span></div>
             <p class="product-card__description">Hearty red lentil stew, mildly spiced and comforting.</p>
           </div>
-          
-          <!-- Product 2: Chickpea Stew -->
           <div class="product-card">
-            <div class="product-card__icon">
-              <i class="fas fa-seedling"></i>
-            </div>
+            <div class="product-card__icon"><i class="fas fa-seedling"></i></div>
             <h3 class="product-card__title">Chickpea Stew</h3>
-            <div class="product-card__tags">
-              <span class="tag tag--vegan">Vegan</span>
-              <span class="tag tag--mild">Mild 🌶️</span>
-            </div>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--mild">Mild 🌶️</span></div>
             <p class="product-card__description">Rich chickpea stew with aromatic Ethiopian herbs.</p>
           </div>
-          
-          <!-- Product 3: Spicy Berbere Stew -->
           <div class="product-card">
-            <div class="product-card__icon">
-              <i class="fas fa-pepper-hot"></i>
-            </div>
+            <div class="product-card__icon"><i class="fas fa-pepper-hot"></i></div>
             <h3 class="product-card__title">Spicy Berbere Stew</h3>
-            <div class="product-card__tags">
-              <span class="tag tag--vegan">Vegan</span>
-              <span class="tag tag--hot">Hot 🌶️🌶️🌶️</span>
-            </div>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--hot">Hot 🌶️🌶️🌶️</span></div>
             <p class="product-card__description">Bold, fiery berbere spice blend — a true Ethiopian classic.</p>
           </div>
-          
-          <!-- Product 4: Oats Porridge -->
           <div class="product-card">
-            <div class="product-card__icon">
-              <i class="fas fa-wheat-awn"></i>
-            </div>
+            <div class="product-card__icon"><i class="fas fa-wheat-awn"></i></div>
             <h3 class="product-card__title">Oats Porridge</h3>
-            <div class="product-card__tags">
-              <span class="tag tag--vegan">Vegan</span>
-              <span class="tag tag--none">No Spice</span>
-            </div>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--none">No Spice</span></div>
             <p class="product-card__description">Creamy, wholesome oats — perfect for breakfast.</p>
           </div>
         </div>
-        
         <div class="text-center mt-40">
-          <a href="products.html" class="btn btn--primary">View All Products <i class="fas fa-arrow-right"></i></a>
+          <a href="#" class="btn btn--primary" onclick="navigateTo('products'); return false;">View All Products <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- ========== HOW IT WORKS ========== -->
+    <!-- How It Works -->
     <section class="how-it-works section">
       <div class="container">
         <h2 class="section__title">Ready in 5 Minutes</h2>
         <p class="section__subtitle">Three simple steps to authentic Ethiopian taste.</p>
-        
         <div class="steps">
           <div class="step">
             <div class="step__number">1</div>
             <h4 class="step__title">Tear Open</h4>
-            <p class="step__description">Open the sachet and pour contents into a bowl or cup.</p>
+            <p>Open the sachet and pour contents into a bowl or cup.</p>
           </div>
           <div class="step">
             <div class="step__number">2</div>
             <h4 class="step__title">Add Hot Water</h4>
-            <p class="step__description">Fill to the indicated line with boiling water.</p>
+            <p>Fill to the indicated line with boiling water.</p>
           </div>
           <div class="step">
             <div class="step__number">3</div>
             <h4 class="step__title">Stir & Enjoy</h4>
-            <p class="step__description">Stir well, wait a moment, and savor Ethiopia.</p>
+            <p>Stir well, wait a moment, and savor Ethiopia.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== TESTIMONIALS ========== -->
+    <!-- Testimonials -->
     <section class="testimonials section section--light">
       <div class="container">
         <h2 class="section__title">What Our Customers Say</h2>
-        
         <div class="testimonials__grid">
           <div class="testimonial-card">
             <i class="fas fa-quote-right testimonial-card__quote"></i>
-            <p class="testimonial-card__text">
-              "Zede takes me back home with every bite. So quick, so delicious! The berbere stew is unmatched."
-            </p>
+            <p class="testimonial-card__text">"Zede takes me back home with every bite. So quick, so delicious!"</p>
             <strong class="testimonial-card__author">— Meskerem A., Addis Ababa</strong>
           </div>
           <div class="testimonial-card">
             <i class="fas fa-quote-right testimonial-card__quote"></i>
-            <p class="testimonial-card__text">
-              "Finally, healthy instant food that actually tastes real. My go-to for busy workdays. No guilt at all."
-            </p>
+            <p class="testimonial-card__text">"Finally, healthy instant food that actually tastes real. My go-to for busy days."</p>
             <strong class="testimonial-card__author">— David T., Nairobi</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== CALL TO ACTION ========== -->
+    <!-- CTA -->
     <section class="cta section">
       <div class="container text-center">
         <h2 class="section__title">Ready to Taste Ethiopia?</h2>
         <p class="section__subtitle">Find Zede products at stores near you or contact us for wholesale inquiries.</p>
-        <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch <i class="fas fa-phone"></i></a>
+        <a href="#" class="btn btn--primary btn--lg" onclick="navigateTo('contact'); return false;">Get in Touch <i class="fas fa-phone"></i></a>
       </div>
     </section>
 
+  </main>
+
+  <!-- ==================== PAGE: PRODUCTS ==================== -->
+  <main id="page-products" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Our Products</h1>
+        <p class="page-header__subtitle">Authentic Ethiopian instant meals — vegan, gluten-free, ready in 5 minutes.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="product-grid product-grid--full">
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-seedling"></i></div>
+            <h3 class="product-card__title">Lentil Stew</h3>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--mild">Mild 🌶️</span></div>
+            <p class="product-card__description">Hearty red lentil stew, mildly spiced with traditional Ethiopian flavors.</p>
+          </div>
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-seedling"></i></div>
+            <h3 class="product-card__title">Chickpea Stew</h3>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--mild">Mild 🌶️</span></div>
+            <p class="product-card__description">Rich chickpea stew with aromatic Ethiopian herbs and spices.</p>
+          </div>
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-pepper-hot"></i></div>
+            <h3 class="product-card__title">Spicy Berbere Stew</h3>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--hot">Hot 🌶️🌶️🌶️</span></div>
+            <p class="product-card__description">Bold, fiery berbere spice blend — a true classic of Ethiopian cuisine.</p>
+          </div>
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-carrot"></i></div>
+            <h3 class="product-card__title">Vegetable Stew</h3>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--medium">Medium 🌶️🌶️</span></div>
+            <p class="product-card__description">Garden-fresh vegetables in a light, savory broth.</p>
+          </div>
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-wheat-awn"></i></div>
+            <h3 class="product-card__title">Oats Porridge</h3>
+            <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--none">No Spice</span></div>
+            <p class="product-card__description">Creamy, wholesome oats porridge — a perfect instant breakfast.</p>
+          </div>
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-drumstick-bite"></i></div>
+            <h3 class="product-card__title">Minced Meat Stew (Spicy)</h3>
+            <div class="product-card__tags"><span class="tag tag--meat">Meat</span><span class="tag tag--hot">Hot 🔥</span></div>
+            <p class="product-card__description">Savory, spiced minced meat stew — rich, bold, and deeply satisfying.</p>
+          </div>
+          <div class="product-card">
+            <div class="product-card__icon"><i class="fas fa-drumstick-bite"></i></div>
+            <h3 class="product-card__title">Minced Meat Stew (Mild)</h3>
+            <div class="product-card__tags"><span class="tag tag--meat">Meat</span><span class="tag tag--mild">Mild 🌶️</span></div>
+            <p class="product-card__description">Instant minced meat stew — all the flavor without the heat.</p>
+          </div>
+        </div>
+        <div class="text-center mt-40 p-20 bg-light">
+          <p><i class="fas fa-box"></i> <strong>Also Available:</strong> Cereal/Legume Base Mix (Pumpy & Pour variations)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: ABOUT ==================== -->
+  <main id="page-about" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">About Us</h1>
+        <p class="page-header__subtitle">From Ethiopian kitchens to the world — our story of flavor and convenience.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="about-snippet__row">
+          <div class="about-snippet__text">
+            <h2 class="section__title section__title--left">Our Story</h2>
+            <p>At <strong>Leuleo Instant Foods</strong>, we believe everyone deserves access to real, wholesome Ethiopian cuisine — no matter how busy life gets. That's why we created <strong>Zede Ethiopian Instant Foods</strong>.</p>
+            <p>Born in the vibrant city of Addis Ababa, Zede captures the soul of Ethiopian cooking in convenient, instant formats. Our recipes draw from generations of tradition, using authentic spice blends like berbere — now ready in just five minutes.</p>
+            <p>Our tagline <em>"HEPAATREY & MYRITOM GOTHT"</em> reflects our core promise: <strong>Tasty, Instant and Hassle Free.</strong></p>
+          </div>
+          <div class="about-snippet__image"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--light">
+      <div class="container">
+        <h2 class="section__title">Our Promise</h2>
+        <p class="section__subtitle">Every Zede product is made with these commitments.</p>
+        <div class="promise-grid">
+          <div class="promise-card"><i class="fas fa-leaf promise-card__icon"></i><h4>Vegan Options</h4><p>Most of our stews and porridges are 100% plant-based.</p></div>
+          <div class="promise-card"><i class="fas fa-wheat-awn-circle-exclamation promise-card__icon"></i><h4>Gluten Free</h4><p>Safe for those with gluten sensitivities.</p></div>
+          <div class="promise-card"><i class="fas fa-flask promise-card__icon"></i><h4>No Artificial Flavors</h4><p>Only real spices and natural ingredients.</p></div>
+          <div class="promise-card"><i class="fas fa-prescription-bottle promise-card__icon"></i><h4>No Preservatives</h4><p>Fresh taste through careful processing.</p></div>
+          <div class="promise-card"><i class="fas fa-oil-can promise-card__icon"></i><h4>No Added Oil</h4><p>Natural flavors shine without extra fats.</p></div>
+          <div class="promise-card"><i class="fas fa-palette promise-card__icon"></i><h4>No Added Colors</h4><p>Vibrant colors from the ingredients themselves.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: RECIPES ==================== -->
+  <main id="page-recipes" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Cook It Your Way</h1>
+        <p class="page-header__subtitle">Beyond instant — use Zede as a base for creative, delicious meals.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="recipe-grid">
+          <div class="recipe-card">
+            <div class="recipe-card__image"><i class="fas fa-utensils" style="font-size:3rem; opacity:0.4;"></i></div>
+            <h3>Berbere Pasta</h3>
+            <p>Mix Spicy Berbere Stew with your favorite pasta for a quick Ethiopian-Italian fusion.</p>
+          </div>
+          <div class="recipe-card">
+            <div class="recipe-card__image"><i class="fas fa-utensils" style="font-size:3rem; opacity:0.4;"></i></div>
+            <h3>Injera Roll-Ups</h3>
+            <p>Spoon warm Lentil Stew onto fresh injera, roll, and enjoy a handheld feast.</p>
+          </div>
+          <div class="recipe-card">
+            <div class="recipe-card__image"><i class="fas fa-utensils" style="font-size:3rem; opacity:0.4;"></i></div>
+            <h3>Stew-Stuffed Bread</h3>
+            <p>Fill warm pita or bread rolls with Minced Meat Stew for a hearty snack.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PAGE: CONTACT ==================== -->
+  <main id="page-contact" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Get in Touch</h1>
+        <p class="page-header__subtitle">We'd love to hear from you — wholesale inquiries welcome.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h3 class="contact-info__heading">Leuleo Instant Foods</h3>
+            <div class="contact-info__item"><i class="fas fa-map-marker-alt"></i><span>Addis Ababa, Ethiopia</span></div>
+            <div class="contact-info__item"><i class="fas fa-phone"></i><span>+251 94 078 9999</span></div>
+            <div class="contact-info__item"><i class="fas fa-phone"></i><span>+251 92 923 4698</span></div>
+            <div class="contact-info__item"><i class="fas fa-envelope"></i><span>sarademsis.aspire@gmail.com</span></div>
+            <div class="contact-info__note"><i class="fas fa-info-circle"></i><strong>Wholesale inquiries are welcome.</strong></div>
+          </div>
+          <div class="contact-form">
+            <h3 class="contact-form__heading">Send Us a Message</h3>
+            <form id="contactForm" class="contact-form__form" onsubmit="handleFormSubmit(event); return false;">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What is this about?">
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <div id="formFeedback" class="form-feedback"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <!-- Brand -->
         <div class="footer__brand">
           <h3 class="footer__logo">ZEDE <span>Ethiopian</span></h3>
           <p>Tasty, Instant and Hassle Free.</p>
           <p class="footer__tagline">Vegan • Gluten Free • No Artificial Anything</p>
         </div>
-        
-        <!-- Quick Links - FIXED -->
         <div class="footer__links">
           <h4 class="footer__heading">Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" onclick="navigateTo('home'); return false;">Home</a></li>
+            <li><a href="#" onclick="navigateTo('products'); return false;">Products</a></li>
+            <li><a href="#" onclick="navigateTo('about'); return false;">About Us</a></li>
+            <li><a href="#" onclick="navigateTo('recipes'); return false;">Recipes</a></li>
+            <li><a href="#" onclick="navigateTo('contact'); return false;">Contact</a></li>
           </ul>
         </div>
-        
-        <!-- Contact Info -->
         <div class="footer__contact">
           <h4 class="footer__heading">Contact Us</h4>
           <p><i class="fas fa-phone"></i> +251 94 078 9999</p>
@@ -300,7 +1214,6 @@
           <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
         </div>
       </div>
-      
       <div class="footer__bottom">
         <p>&copy; 2026 Zede Ethiopian Instant Foods — Leuleo Instant Foods. All rights reserved.</p>
       </div>
@@ -308,6 +1221,123 @@
   </footer>
 
   <!-- ==================== SCRIPTS ==================== -->
-  <script src="js/main.js"></script>
+  <script>
+    // ============================================
+    // PAGE NAVIGATION SYSTEM
+    // ============================================
+    function navigateTo(pageName) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('page--active');
+      });
+      
+      // Show selected page
+      const targetPage = document.getElementById('page-' + pageName);
+      if (targetPage) {
+        targetPage.classList.add('page--active');
+      }
+      
+      // Update active nav link
+      document.querySelectorAll('.nav__link').forEach(link => {
+        link.classList.remove('nav__link--active');
+        if (link.getAttribute('data-page') === pageName) {
+          link.classList.add('nav__link--active');
+        }
+      });
+      
+      // Close mobile menu if open
+      const navMenu = document.getElementById('nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      if (navMenu && navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ============================================
+    // MOBILE NAVIGATION TOGGLE
+    // ============================================
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          if (navMenu.classList.contains('show')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      });
+    }
+
+    // ============================================
+    // CONTACT FORM HANDLING
+    // ============================================
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const formFeedback = document.getElementById('formFeedback');
+      
+      if (!name || !email || !message) {
+        showFeedback('Please fill in all required fields.', 'error');
+        return;
+      }
+      
+      if (!isValidEmail(email)) {
+        showFeedback('Please enter a valid email address.', 'error');
+        return;
+      }
+      
+      showFeedback('Thank you for your message! We will get back to you soon.', 'success');
+      document.getElementById('contactForm').reset();
+      
+      setTimeout(() => {
+        if (formFeedback) {
+          formFeedback.style.display = 'none';
+        }
+      }, 5000);
+    }
+
+    function showFeedback(message, type) {
+      const formFeedback = document.getElementById('formFeedback');
+      if (!formFeedback) return;
+      
+      formFeedback.textContent = message;
+      formFeedback.style.display = 'block';
+      
+      if (type === 'success') {
+        formFeedback.style.background = '#e8f5e9';
+        formFeedback.style.color = '#2d5a27';
+        formFeedback.style.border = '1px solid #a5d6a7';
+      } else {
+        formFeedback.style.background = '#fce4ec';
+        formFeedback.style.color = '#b33a2a';
+        formFeedback.style.border = '1px solid #ef9a9a';
+      }
+    }
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    console.log('✅ Zede Ethiopian Instant Foods - All pages loaded successfully!');
+  </script>
 </body>
 </html>
