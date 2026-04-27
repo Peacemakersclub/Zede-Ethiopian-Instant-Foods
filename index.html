@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -17,50 +17,45 @@
   <style>
     /* ============================================
        ZEDE ETHIOPIAN INSTANT FOODS
-       Soft Golden Color Palette
-       Inspired by the product packaging
+       ENHANCED PREMIUM DESIGN
+       Soft Golden + Ethiopian Food Imagery
        ============================================ */
 
     :root {
-      /* -- Primary Golden Tones -- */
-      --color-primary: #C88A4A;         /* Warm golden bronze */
-      --color-primary-hover: #B07838;
-      --color-golden: #D4A24E;          /* Soft amber gold */
-      --color-golden-light: #E8C97A;    /* Light golden wheat */
-      --color-soft-gold: #F5E6C8;       /* Very soft champagne gold */
-      
-      /* -- Backgrounds -- */
-      --color-bg-cream: #FFFDF7;        /* Warm off-white base */
-      --color-bg-warm: #FFF9ED;         /* Warm golden cream */
-      --color-bg-card: #FFFFFF;
-      
-      /* -- Text -- */
-      --color-dark: #4A3728;            /* Warm dark brown */
-      --color-text-soft: #7A6B5C;       /* Soft brown */
-      
-      /* -- Accents -- */
-      --color-green: #6B8E5A;           /* Muted olive green for contrast */
-      --color-green-dark: #2D5A27;
-      
-      /* -- Tags -- */
-      --tag-vegan-bg: #E8F5E9;
-      --tag-vegan-text: #2D5A27;
-      --tag-meat-bg: #FFF0E5;
-      --tag-meat-text: #C88A4A;
-      --tag-mild-bg: #FFF8E1;
-      --tag-mild-text: #B07838;
-      --tag-hot-bg: #FFF0E5;
-      --tag-hot-text: #D4784A;
-      --tag-none-bg: #F5F5F5;
-      --tag-none-text: #888;
+      /* Premium Golden Palette */
+      --gold-deep: #A67B3D;
+      --gold-primary: #C8964E;
+      --gold-medium: #D4A85C;
+      --gold-light: #E8CD8E;
+      --gold-pale: #F5E6C8;
+      --gold-wash: #FDF5E6;
+
+      --bg-cream: #FFFEF9;
+      --bg-warm: #FFFBF2;
+      --bg-card: #FFFFFF;
+      --bg-dark: #2E2218;
+
+      --text-dark: #3D2C1C;
+      --text-soft: #6B5C4D;
+      --text-light: #9B8A7A;
+
+      --accent-green: #5C7A4A;
+      --accent-red: #C4553A;
 
       --font-heading: 'Playfair Display', serif;
       --font-body: 'Lato', sans-serif;
-      --shadow-card: 0 8px 24px rgba(180, 140, 80, 0.08);
-      --shadow-card-hover: 0 16px 36px rgba(180, 140, 80, 0.15);
-      --border-radius: 20px;
-      --border-radius-btn: 40px;
-      --transition: 0.25s ease;
+
+      --shadow-sm: 0 2px 8px rgba(166, 123, 61, 0.06);
+      --shadow-md: 0 8px 24px rgba(166, 123, 61, 0.10);
+      --shadow-lg: 0 16px 40px rgba(166, 123, 61, 0.14);
+      --shadow-xl: 0 24px 56px rgba(166, 123, 61, 0.18);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-btn: 50px;
+
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     *,
@@ -77,9 +72,9 @@
 
     body {
       font-family: var(--font-body);
-      background-color: var(--color-bg-cream);
-      color: var(--color-dark);
-      line-height: 1.6;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -100,122 +95,144 @@
 
     h1, h2, h3, h4 {
       font-family: var(--font-heading);
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: -0.3px;
     }
 
     .container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
     .text-center { text-align: center; }
     .mt-20 { margin-top: 20px; }
     .mt-40 { margin-top: 40px; }
-    .p-20 { padding: 20px; }
 
-    .bg-light {
-      background: var(--color-bg-card);
-      border-radius: var(--border-radius);
-      border: 1px solid var(--color-soft-gold);
-    }
-
+    /* ===== SECTION HEADERS ===== */
     .section {
-      padding: 70px 0;
+      padding: 80px 0;
     }
 
     .section--warm {
-      background: var(--color-bg-warm);
+      background: var(--bg-warm);
+    }
+
+    .section--golden {
+      background: linear-gradient(180deg, var(--gold-wash) 0%, var(--bg-cream) 100%);
     }
 
     .section__title {
       text-align: center;
-      font-size: 2.4rem;
-      color: var(--color-primary);
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
+      font-size: 2.6rem;
+      color: var(--gold-deep);
+      margin-bottom: 10px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .section__title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold-primary), var(--gold-light));
+      border-radius: 3px;
     }
 
     .section__title--left {
       text-align: left;
     }
 
+    .section__title--left::after {
+      left: 0;
+      transform: none;
+    }
+
     .section__subtitle {
       text-align: center;
-      color: var(--color-text-soft);
-      max-width: 600px;
-      margin: 0 auto 45px;
+      color: var(--text-soft);
+      max-width: 580px;
+      margin: 0 auto 50px;
       font-size: 1.1rem;
+      font-weight: 400;
     }
 
     /* ===== BUTTONS ===== */
     .btn {
-      display: inline-block;
-      padding: 13px 30px;
-      border-radius: var(--border-radius-btn);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
       font-weight: 600;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
       transition: all var(--transition);
       cursor: pointer;
       font-size: 1rem;
       border: none;
       font-family: var(--font-body);
+      white-space: nowrap;
     }
 
     .btn--primary {
-      background: linear-gradient(135deg, var(--color-golden), var(--color-primary));
+      background: linear-gradient(135deg, var(--gold-medium) 0%, var(--gold-primary) 50%, var(--gold-deep) 100%);
       color: #fff;
-      box-shadow: 0 4px 14px rgba(200, 138, 74, 0.3);
+      box-shadow: 0 6px 20px rgba(166, 123, 61, 0.25);
     }
 
     .btn--primary:hover {
-      background: linear-gradient(135deg, var(--color-primary), #9E6B30);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(200, 138, 74, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(166, 123, 61, 0.35);
       color: #fff;
     }
 
     .btn--outline {
       background: transparent;
-      border: 2px solid var(--color-golden);
-      color: var(--color-primary);
+      border: 2px solid var(--gold-primary);
+      color: var(--gold-deep);
     }
 
     .btn--outline:hover {
-      background: var(--color-golden);
+      background: var(--gold-primary);
       color: #fff;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .btn--text {
       background: transparent;
-      color: var(--color-primary);
+      color: var(--gold-deep);
       padding: 8px 0;
       font-weight: 600;
     }
 
     .btn--text:hover {
-      color: var(--color-primary-hover);
+      color: var(--gold-primary);
+      gap: 12px;
     }
 
     .btn--lg {
-      padding: 16px 38px;
+      padding: 18px 40px;
       font-size: 1.1rem;
     }
 
     .btn--full {
       width: 100%;
-      text-align: center;
+      justify-content: center;
     }
 
     /* ===== HEADER ===== */
     .header {
-      background: var(--color-bg-card);
-      box-shadow: 0 2px 16px rgba(180, 140, 80, 0.06);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--color-soft-gold);
+      border-bottom: 1px solid var(--gold-pale);
     }
 
     .nav {
@@ -228,46 +245,56 @@
 
     .nav__logo {
       font-family: var(--font-heading);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--color-primary);
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--gold-deep);
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .nav__logo--highlight {
-      color: #A07030;
-      font-weight: 600;
+      color: var(--accent-red);
+      font-weight: 700;
+    }
+
+    .nav__logo i {
+      font-size: 1.4rem;
+      color: var(--gold-medium);
     }
 
     .nav__menu {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       align-items: center;
     }
 
     .nav__link {
-      font-weight: 500;
-      font-size: 1.05rem;
-      color: var(--color-dark);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
       position: relative;
       transition: color var(--transition);
       cursor: pointer;
+      padding: 6px 0;
     }
 
     .nav__link:hover,
     .nav__link--active {
-      color: var(--color-primary);
+      color: var(--gold-deep);
     }
 
     .nav__link::after {
       content: '';
       position: absolute;
       width: 0;
-      height: 2px;
-      bottom: -4px;
+      height: 2.5px;
+      bottom: 0;
       left: 0;
-      background: var(--color-golden);
-      transition: width 0.3s;
+      background: var(--gold-medium);
+      border-radius: 2px;
+      transition: width var(--transition);
     }
 
     .nav__link:hover::after,
@@ -279,44 +306,76 @@
       display: none;
       font-size: 1.5rem;
       cursor: pointer;
-      color: var(--color-dark);
+      color: var(--text-dark);
     }
 
     /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(160deg, #FFFDF7 0%, #FFF8E8 40%, #FFF3DB 100%);
-      padding: 90px 0;
-      border-bottom: 1px solid var(--color-soft-gold);
+      background: linear-gradient(160deg, #FFFEF9 0%, #FFF8ED 30%, #FDF0DB 70%, #FBE8C8 100%);
+      padding: 100px 0 90px;
+      border-bottom: 1px solid var(--gold-pale);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(232, 205, 142, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .hero__content {
       max-width: 650px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      background: var(--gold-pale);
+      color: var(--gold-deep);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      border: 1px solid var(--gold-light);
     }
 
     .hero__title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1.15;
+      font-size: 3.8rem;
+      font-weight: 800;
+      color: var(--gold-deep);
+      line-height: 1.12;
       margin-bottom: 20px;
+    }
+
+    .hero__title span {
+      color: var(--accent-red);
     }
 
     .hero__description {
       font-size: 1.25rem;
-      color: var(--color-text-soft);
-      margin-bottom: 32px;
+      color: var(--text-soft);
+      margin-bottom: 36px;
+      line-height: 1.7;
     }
 
     .hero__buttons {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     /* ===== FEATURES BAR ===== */
     .features-bar {
-      background: linear-gradient(135deg, #B07838, #C88A4A);
-      padding: 18px 0;
+      background: linear-gradient(135deg, #9B6E3E 0%, #B8884E 50%, #C8964E 100%);
+      padding: 20px 0;
       color: #fff;
     }
 
@@ -324,266 +383,294 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
       text-align: center;
     }
 
     .features-bar__item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       font-weight: 500;
       font-size: 0.95rem;
     }
 
     .features-bar__icon {
-      font-size: 1.2rem;
-      color: #FFE9C8;
+      font-size: 1.3rem;
+      color: #FFE9C0;
+      background: rgba(255, 255, 255, 0.15);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* ===== ABOUT SNIPPET ===== */
     .about-snippet__row {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 60px;
       flex-wrap: wrap;
     }
 
     .about-snippet__text {
-      flex: 1 1 400px;
+      flex: 1 1 420px;
     }
 
     .about-snippet__text p {
-      margin-bottom: 14px;
-      color: var(--color-text-soft);
+      margin-bottom: 16px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
     }
 
-    /* ---- IMAGE PLACEHOLDER ---- */
     .about-snippet__image {
-      flex: 1 1 400px;
-      border-radius: var(--border-radius);
-      height: 290px;
+      flex: 1 1 420px;
+      border-radius: var(--radius-lg);
+      height: 340px;
       overflow: hidden;
-      box-shadow: var(--shadow-card-hover);
+      box-shadow: var(--shadow-lg);
+      position: relative;
     }
 
     .about-snippet__image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.5s;
     }
 
-    .image-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #FBF0D9 0%, #F5E0B8 100%);
-      color: #B89860;
-      font-size: 0.9rem;
-      border: 2px dashed #D4B87A;
-      border-radius: var(--border-radius);
-    }
-
-    .image-placeholder i {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      opacity: 0.6;
-    }
-
-    .image-placeholder span {
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .about-snippet__image:hover img {
+      transform: scale(1.05);
     }
 
     .about-snippet__badges {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 20px;
     }
 
     .badge {
-      background: var(--color-soft-gold);
+      background: var(--gold-wash);
       color: #8B6914;
-      padding: 6px 14px;
-      border-radius: 20px;
+      padding: 7px 16px;
+      border-radius: 25px;
       font-weight: 600;
-      font-size: 0.83rem;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
-      gap: 6px;
-      border: 1px solid #E8D5A8;
+      gap: 7px;
+      border: 1px solid var(--gold-pale);
+      transition: all var(--transition);
+    }
+
+    .badge:hover {
+      background: var(--gold-pale);
+      transform: translateY(-2px);
     }
 
     .badge i {
-      color: var(--color-golden);
+      color: var(--gold-primary);
     }
 
     /* ===== PRODUCT CARDS ===== */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       margin-top: 20px;
     }
 
     .product-grid--full {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     }
 
     .product-card {
-      background: var(--color-bg-card);
-      border-radius: var(--border-radius);
-      padding: 28px 18px 22px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 32px 20px 24px;
       text-align: center;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid var(--color-soft-gold);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition);
+      border: 1px solid var(--gold-pale);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold-primary), var(--gold-deep));
+      opacity: 0;
+      transition: opacity var(--transition);
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-card-hover);
-      border-color: var(--color-golden-light);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold-light);
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
     }
 
     .product-card__icon {
-      font-size: 2.8rem;
-      color: var(--color-golden);
-      margin-bottom: 12px;
+      font-size: 3rem;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+      transition: transform var(--transition);
+    }
+
+    .product-card:hover .product-card__icon {
+      transform: scale(1.1);
     }
 
     .product-card__title {
-      font-size: 1.4rem;
-      color: var(--color-dark);
-      margin-bottom: 6px;
+      font-size: 1.45rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
     }
 
     .product-card__tags {
-      margin: 10px 0 14px;
+      margin: 12px 0 16px;
       display: flex;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .tag {
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 20px;
       font-weight: 600;
       font-size: 0.78rem;
       letter-spacing: 0.3px;
     }
 
-    .tag--vegan { background: var(--tag-vegan-bg); color: var(--tag-vegan-text); }
-    .tag--meat { background: var(--tag-meat-bg); color: var(--tag-meat-text); }
-    .tag--mild, .tag--medium { background: var(--tag-mild-bg); color: var(--tag-mild-text); }
-    .tag--hot { background: var(--tag-hot-bg); color: var(--tag-hot-text); }
-    .tag--none { background: var(--tag-none-bg); color: var(--tag-none-text); }
+    .tag--vegan { background: #E8F5E9; color: #2D5A27; }
+    .tag--meat { background: #FFF0E5; color: #C88A4A; }
+    .tag--mild, .tag--medium { background: #FFF8E1; color: #B07838; }
+    .tag--hot { background: #FFF0E5; color: #D4784A; }
+    .tag--none { background: #F5F5F5; color: #888; }
 
     .product-card__description {
-      font-size: 0.93rem;
-      color: var(--color-text-soft);
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
     }
 
     /* ===== STEPS ===== */
     .steps {
       display: flex;
       justify-content: center;
-      gap: 45px;
+      gap: 50px;
       flex-wrap: wrap;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .step {
-      flex: 0 0 200px;
+      flex: 0 0 220px;
+      position: relative;
     }
 
     .step__number {
-      background: linear-gradient(135deg, var(--color-golden), var(--color-primary));
+      background: linear-gradient(135deg, var(--gold-medium), var(--gold-deep));
       color: #fff;
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 0 auto 16px;
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 auto 18px;
       font-family: var(--font-heading);
-      box-shadow: 0 4px 12px rgba(200, 138, 74, 0.3);
+      box-shadow: 0 8px 24px rgba(166, 123, 61, 0.3);
     }
 
     .step__title {
-      margin-bottom: 6px;
-      color: var(--color-dark);
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      font-size: 1.2rem;
     }
 
     .step__description {
-      color: var(--color-text-soft);
+      color: var(--text-soft);
       font-size: 0.95rem;
     }
 
     /* ===== TESTIMONIALS ===== */
     .testimonials__grid {
       display: flex;
-      gap: 30px;
+      gap: 32px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .testimonial-card {
-      background: var(--color-bg-card);
-      border-radius: 20px;
-      padding: 28px;
-      max-width: 380px;
-      box-shadow: var(--shadow-card);
-      font-style: italic;
-      border-top: 4px solid var(--color-golden);
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      max-width: 400px;
+      box-shadow: var(--shadow-md);
+      border-top: 5px solid var(--gold-primary);
+      transition: all var(--transition);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
     }
 
     .testimonial-card__quote {
-      color: var(--color-golden);
-      font-size: 2rem;
-      margin-bottom: 10px;
+      color: var(--gold-primary);
+      font-size: 2.2rem;
+      margin-bottom: 14px;
       display: block;
+      opacity: 0.6;
     }
 
     .testimonial-card__text {
-      margin-bottom: 12px;
-      color: var(--color-text-soft);
+      margin-bottom: 14px;
+      color: var(--text-soft);
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
 
     .testimonial-card__author {
       font-style: normal;
       font-weight: 700;
-      color: var(--color-dark);
+      color: var(--text-dark);
     }
 
     /* ===== PAGE HEADER ===== */
     .page-header {
-      background: linear-gradient(160deg, #FFFDF7, #FFF8E8);
-      padding: 55px 0;
+      background: linear-gradient(160deg, #FFFEF9, #FFF8ED);
+      padding: 60px 0;
       text-align: center;
-      border-bottom: 1px solid var(--color-soft-gold);
+      border-bottom: 1px solid var(--gold-pale);
     }
 
     .page-header__title {
-      font-size: 2.8rem;
-      color: var(--color-primary);
+      font-size: 3rem;
+      color: var(--gold-deep);
+      font-weight: 800;
     }
 
     .page-header__subtitle {
-      color: var(--color-text-soft);
+      color: var(--text-soft);
       font-size: 1.15rem;
-      margin-top: 8px;
+      margin-top: 10px;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
@@ -592,34 +679,87 @@
     /* ===== PROMISE GRID ===== */
     .promise-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 28px;
       margin-top: 20px;
     }
 
     .promise-card {
-      background: var(--color-bg-card);
-      border-radius: 20px;
-      padding: 28px 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 32px 22px;
       text-align: center;
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--color-soft-gold);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gold-pale);
+      transition: all var(--transition);
+    }
+
+    .promise-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-light);
     }
 
     .promise-card__icon {
-      font-size: 2.4rem;
-      color: var(--color-golden);
-      margin-bottom: 14px;
+      font-size: 2.6rem;
+      color: var(--gold-primary);
+      margin-bottom: 16px;
     }
 
     .promise-card h4 {
-      color: var(--color-dark);
-      margin-bottom: 8px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
     }
 
     .promise-card p {
-      color: var(--color-text-soft);
-      font-size: 0.93rem;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    /* ===== ETHIOPIAN FOOD IMAGE GRID ===== */
+    .food-image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .food-image-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 240px;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition);
+    }
+
+    .food-image-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .food-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .food-image-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .food-image-card__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: #fff;
+      padding: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
     /* ===== CONTACT LAYOUT ===== */
@@ -630,91 +770,94 @@
     }
 
     .contact-info {
-      flex: 1 1 300px;
-      background: var(--color-bg-card);
-      padding: 32px;
-      border-radius: var(--border-radius);
-      border: 1px solid var(--color-soft-gold);
+      flex: 1 1 320px;
+      background: var(--bg-card);
+      padding: 36px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gold-pale);
+      box-shadow: var(--shadow-sm);
     }
 
     .contact-info__heading {
-      font-size: 1.6rem;
-      color: var(--color-primary);
-      margin-bottom: 20px;
+      font-size: 1.7rem;
+      color: var(--gold-deep);
+      margin-bottom: 24px;
     }
 
     .contact-info__item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 14px;
+      margin-bottom: 16px;
       font-size: 1.05rem;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
     }
 
     .contact-info__item i {
-      color: var(--color-golden);
-      width: 20px;
+      color: var(--gold-primary);
+      width: 22px;
       text-align: center;
+      font-size: 1.1rem;
     }
 
     .contact-info__note {
-      margin-top: 24px;
-      padding-top: 18px;
-      border-top: 1px solid var(--color-soft-gold);
-      color: var(--color-primary);
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gold-pale);
+      color: var(--gold-deep);
       font-weight: 600;
     }
 
     .contact-form {
-      flex: 2 1 400px;
-      background: var(--color-bg-card);
-      padding: 32px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--color-soft-gold);
+      flex: 2 1 450px;
+      background: var(--bg-card);
+      padding: 36px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gold-pale);
     }
 
     .contact-form__heading {
-      font-size: 1.6rem;
-      color: var(--color-primary);
-      margin-bottom: 20px;
+      font-size: 1.7rem;
+      color: var(--gold-deep);
+      margin-bottom: 24px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       font-weight: 600;
-      color: var(--color-dark);
+      color: var(--text-dark);
+      font-size: 0.95rem;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 12px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--color-soft-gold);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--gold-pale);
       font-family: var(--font-body);
       font-size: 1rem;
-      transition: border-color var(--transition);
-      background: #FFFDF7;
+      transition: all var(--transition);
+      background: #FFFEF9;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--color-golden);
-      box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.1);
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 4px rgba(200, 150, 78, 0.08);
     }
 
     .form-feedback {
-      margin-top: 14px;
-      padding: 12px;
-      border-radius: 12px;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: var(--radius-sm);
       font-weight: 600;
       display: none;
     }
@@ -722,89 +865,110 @@
     /* ===== RECIPE CARDS ===== */
     .recipe-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
 
     .recipe-card {
-      background: var(--color-bg-card);
-      border-radius: var(--border-radius);
-      padding: 24px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 0;
       text-align: center;
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--color-soft-gold);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gold-pale);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
     }
 
     .recipe-card__image {
-      height: 150px;
-      border-radius: 16px;
-      margin-bottom: 16px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #FBF0D9, #F5E0B8);
+      overflow: hidden;
+    }
+
+    .recipe-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .recipe-card:hover .recipe-card__image img {
+      transform: scale(1.08);
+    }
+
+    .recipe-card__body {
+      padding: 22px 20px 24px;
     }
 
     .recipe-card h3 {
-      color: var(--color-dark);
+      color: var(--text-dark);
       margin-bottom: 8px;
     }
 
     .recipe-card p {
-      color: var(--color-text-soft);
-      font-size: 0.93rem;
+      color: var(--text-soft);
+      font-size: 0.95rem;
     }
 
     /* ===== CTA ===== */
-    .cta {
+    .cta-section {
+      background: linear-gradient(135deg, var(--gold-wash) 0%, #FDF0DB 50%, var(--gold-pale) 100%);
+      border-radius: var(--radius-lg);
+      padding: 60px 40px;
       text-align: center;
-      background: linear-gradient(160deg, #FFFDF7, #FFF8E8);
-      border-radius: var(--border-radius);
-      margin: 0 24px;
-      padding: 50px 24px;
+      border: 1px solid var(--gold-light);
     }
 
     /* ===== FOOTER ===== */
     .footer {
-      background: #3D2C1F;
-      color: #E8D5B0;
-      padding: 50px 0 0;
-      margin-top: 30px;
+      background: var(--bg-dark);
+      color: #D4C0A8;
+      padding: 55px 0 0;
+      margin-top: 40px;
     }
 
     .footer__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 35px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
     }
 
     .footer__logo {
       color: #FFF;
       font-family: var(--font-heading);
+      font-size: 1.6rem;
     }
 
     .footer__logo span {
-      color: var(--color-golden-light);
+      color: var(--gold-light);
     }
 
     .footer__tagline {
       font-size: 0.9rem;
-      margin-top: 6px;
-      opacity: 0.8;
+      margin-top: 8px;
+      opacity: 0.75;
     }
 
     .footer__heading {
       color: #FFF;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       font-size: 1.1rem;
     }
 
     .footer__links ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .footer__links a {
-      color: #D4B87A;
+      color: #C8A87A;
       transition: color var(--transition);
       cursor: pointer;
       font-size: 0.95rem;
@@ -815,33 +979,35 @@
     }
 
     .footer__contact p {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       font-size: 0.95rem;
     }
 
     .footer__contact i {
-      margin-right: 8px;
-      color: var(--color-golden-light);
+      margin-right: 10px;
+      color: var(--gold-light);
+      width: 18px;
     }
 
     .footer__bottom {
       text-align: center;
-      padding: 20px 0;
-      border-top: 1px solid #5A4032;
+      padding: 22px 0;
+      border-top: 1px solid #4A3628;
       font-size: 0.9rem;
       opacity: 0.7;
+      margin-top: 40px;
     }
 
     /* ===== DEVELOPER CREDIT ===== */
     .developer-credit {
       text-align: center;
-      padding: 14px 0;
-      background: #2E1F14;
+      padding: 15px 0;
+      background: #241A10;
       font-size: 0.85rem;
     }
 
     .developer-credit span {
-      color: #B89870;
+      color: #A0886A;
       opacity: 0.8;
     }
 
@@ -853,16 +1019,21 @@
 
     .developer-credit a:hover {
       color: #FFF;
-      text-decoration: underline;
     }
 
     /* ===== PAGE VISIBILITY ===== */
     .page {
       display: none;
+      animation: fadeIn 0.4s ease;
     }
 
     .page--active {
       display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ===== RESPONSIVE ===== */
@@ -871,9 +1042,9 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        gap: 16px;
-        padding: 20px 0;
-        background: var(--color-bg-card);
+        gap: 14px;
+        padding: 24px 0;
+        background: var(--bg-card);
       }
 
       .nav__menu.show {
@@ -884,21 +1055,29 @@
         display: block;
       }
 
+      .hero {
+        padding: 60px 0;
+      }
+
       .hero__title {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
       }
 
       .section__title {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .about-snippet__row {
         flex-direction: column;
       }
 
-      .cta {
-        margin: 0 12px;
-        padding: 40px 16px;
+      .about-snippet__image {
+        height: 260px;
+      }
+
+      .cta-section {
+        padding: 40px 20px;
+        border-radius: var(--radius-md);
       }
     }
 
@@ -908,13 +1087,17 @@
       }
 
       .hero__description {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
       }
 
       .features-bar__grid {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .food-image-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -926,7 +1109,7 @@
     <div class="container">
       <nav class="nav">
         <a href="#" class="nav__logo" onclick="navigateTo('home'); return false;">
-          ZEDE <span class="nav__logo--highlight">Ethiopian</span>
+          <i class="fas fa-utensils"></i> ZEDE <span class="nav__logo--highlight">Ethiopian</span>
         </a>
 
         <ul class="nav__menu" id="nav-menu">
@@ -951,8 +1134,9 @@
     <section class="hero">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__title">Taste of Ethiopia,<br>Ready in Minutes</h1>
-          <p class="hero__description">Authentic Ethiopian flavors — vegan, gluten-free, and made with nothing artificial. Just add hot water and enjoy.</p>
+          <div class="hero__badge"><i class="fas fa-star"></i> Authentic Ethiopian Cuisine</div>
+          <h1 class="hero__title">Taste of <span>Ethiopia</span>,<br>Ready in Minutes</h1>
+          <p class="hero__description">Authentic Ethiopian flavors — vegan, gluten-free, and made with nothing artificial. Just add hot water and enjoy the rich taste of tradition.</p>
           <div class="hero__buttons">
             <a href="#" class="btn btn--primary" onclick="navigateTo('products'); return false;"><i class="fas fa-utensils"></i> Explore Products</a>
             <a href="#" class="btn btn--outline" onclick="navigateTo('contact'); return false;"><i class="fas fa-map-marker-alt"></i> Where to Buy</a>
@@ -965,12 +1149,12 @@
     <div class="features-bar">
       <div class="container">
         <div class="features-bar__grid">
-          <div class="features-bar__item"><i class="fas fa-clock features-bar__icon"></i><span>Ready in 5 Minutes</span></div>
-          <div class="features-bar__item"><i class="fas fa-leaf features-bar__icon"></i><span>100% Vegan Options</span></div>
-          <div class="features-bar__item"><i class="fas fa-wheat-awn-circle-exclamation features-bar__icon"></i><span>Gluten Free</span></div>
-          <div class="features-bar__item"><i class="fas fa-ban features-bar__icon"></i><span>No Preservatives</span></div>
-          <div class="features-bar__item"><i class="fas fa-palette features-bar__icon"></i><span>No Artificial Colors</span></div>
-          <div class="features-bar__item"><i class="fas fa-oil-can features-bar__icon"></i><span>No Added Oil</span></div>
+          <div class="features-bar__item"><span class="features-bar__icon"><i class="fas fa-clock"></i></span><span>Ready in 5 Minutes</span></div>
+          <div class="features-bar__item"><span class="features-bar__icon"><i class="fas fa-leaf"></i></span><span>100% Vegan Options</span></div>
+          <div class="features-bar__item"><span class="features-bar__icon"><i class="fas fa-wheat-awn-circle-exclamation"></i></span><span>Gluten Free</span></div>
+          <div class="features-bar__item"><span class="features-bar__icon"><i class="fas fa-ban"></i></span><span>No Preservatives</span></div>
+          <div class="features-bar__item"><span class="features-bar__icon"><i class="fas fa-palette"></i></span><span>No Artificial Colors</span></div>
+          <div class="features-bar__item"><span class="features-bar__icon"><i class="fas fa-oil-can"></i></span><span>No Added Oil</span></div>
         </div>
       </div>
     </div>
@@ -982,7 +1166,7 @@
           <div class="about-snippet__text">
             <h2 class="section__title section__title--left">Our Story</h2>
             <p><strong>Zede Ethiopian Instant Foods</strong> brings the rich, bold flavors of Ethiopia to your table — without the wait. Born in Addis Ababa and crafted with care by <strong>Leuleo Instant Foods</strong>.</p>
-            <p>Our tagline: <em>HEPAATREY & MYRITOM GOTHT — Tasty, Instant and Hassle Free.</em></p>
+            <p>Our tagline says it all: <em>"HEPAATREY & MYRITOM GOTHT"</em> — <strong>Tasty, Instant and Hassle Free.</strong> We believe everyone deserves access to authentic Ethiopian cuisine.</p>
             <div class="about-snippet__badges">
               <span class="badge"><i class="fas fa-check-circle"></i> Vegan</span>
               <span class="badge"><i class="fas fa-check-circle"></i> Gluten Free</span>
@@ -993,15 +1177,39 @@
             </div>
             <a href="#" class="btn btn--text mt-20" onclick="navigateTo('about'); return false;">Learn More About Us <i class="fas fa-arrow-right"></i></a>
           </div>
-          <!-- IMAGE PLACEHOLDER - Replace with your image -->
+          <!-- ETHIOPIAN FOOD IMAGE - INJERA WITH STEWS -->
           <div class="about-snippet__image">
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Replace with<br>Your Image</span>
-            </div>
-            <!-- To use your own image, replace the div above with:
-            <img src="images/about-food.jpg" alt="Ethiopian traditional food">
-            -->
+            <img src="https://images.unsplash.com/photo-1567582319158-e1b6f0964e37?w=800&h=600&fit=crop&auto=format" 
+                 alt="Traditional Ethiopian Injera with various stews" 
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-placeholder\' style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FBF0D9,#F5E0B8);color:#B89860;border-radius:28px;\'><i class=\'fas fa-image\' style=\'font-size:3rem;opacity:0.5;\'></i></div>';">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ethiopian Food Culture Gallery -->
+    <section class="section section--golden">
+      <div class="container">
+        <h2 class="section__title">Taste of Ethiopian Culture</h2>
+        <p class="section__subtitle">Our instant foods are inspired by centuries of Ethiopian culinary tradition.</p>
+        <div class="food-image-grid">
+          <div class="food-image-card">
+            <img src="https://images.unsplash.com/photo-1604329756574-bda80af94ad0?w=600&h=400&fit=crop&auto=format" 
+                 alt="Ethiopian vegetarian platter on injera"
+                 onerror="this.src='https://images.unsplash.com/photo-1567582319158-e1b6f0964e37?w=600&h=400&fit=crop&auto=format';">
+            <div class="food-image-card__overlay">Traditional Vegetarian Platter</div>
+          </div>
+          <div class="food-image-card">
+            <img src="https://images.unsplash.com/photo-1617196034796-73dfa7a14aa5?w=600&h=400&fit=crop&auto=format" 
+                 alt="Ethiopian Berbere spice stew"
+                 onerror="this.src='https://images.unsplash.com/photo-1604329756574-bda80af94ad0?w=600&h=400&fit=crop&auto=format';">
+            <div class="food-image-card__overlay">Spicy Berbere Stew</div>
+          </div>
+          <div class="food-image-card">
+            <img src="https://images.unsplash.com/photo-1511910849306-9e1af10f2e0e?w=600&h=400&fit=crop&auto=format" 
+                 alt="Ethiopian red lentil stew"
+                 onerror="this.src='https://images.unsplash.com/photo-1567582319158-e1b6f0964e37?w=600&h=400&fit=crop&auto=format';">
+            <div class="food-image-card__overlay">Hearty Lentil Stew</div>
           </div>
         </div>
       </div>
@@ -1017,13 +1225,13 @@
             <div class="product-card__icon"><i class="fas fa-seedling"></i></div>
             <h3 class="product-card__title">Lentil Stew</h3>
             <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--mild">Mild 🌶️</span></div>
-            <p class="product-card__description">Hearty red lentil stew, mildly spiced and comforting.</p>
+            <p class="product-card__description">Hearty red lentil stew, mildly spiced and comforting — a taste of home.</p>
           </div>
           <div class="product-card">
             <div class="product-card__icon"><i class="fas fa-seedling"></i></div>
             <h3 class="product-card__title">Chickpea Stew</h3>
             <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--mild">Mild 🌶️</span></div>
-            <p class="product-card__description">Rich chickpea stew with aromatic Ethiopian herbs.</p>
+            <p class="product-card__description">Rich chickpea stew with aromatic Ethiopian herbs and spices.</p>
           </div>
           <div class="product-card">
             <div class="product-card__icon"><i class="fas fa-pepper-hot"></i></div>
@@ -1035,7 +1243,7 @@
             <div class="product-card__icon"><i class="fas fa-wheat-awn"></i></div>
             <h3 class="product-card__title">Oats Porridge</h3>
             <div class="product-card__tags"><span class="tag tag--vegan">Vegan</span><span class="tag tag--none">No Spice</span></div>
-            <p class="product-card__description">Creamy, wholesome oats — perfect for breakfast.</p>
+            <p class="product-card__description">Creamy, wholesome oats — the perfect instant breakfast.</p>
           </div>
         </div>
         <div class="text-center mt-40">
@@ -1070,18 +1278,18 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials section section--warm">
+    <section class="testimonials section section--golden">
       <div class="container">
         <h2 class="section__title">What Our Customers Say</h2>
         <div class="testimonials__grid">
           <div class="testimonial-card">
             <i class="fas fa-quote-right testimonial-card__quote"></i>
-            <p class="testimonial-card__text">"Zede takes me back home with every bite. So quick, so delicious!"</p>
+            <p class="testimonial-card__text">"Zede takes me back home with every bite. The berbere stew is exactly like my grandmother's — so quick, so delicious!"</p>
             <strong class="testimonial-card__author">— Meskerem A., Addis Ababa</strong>
           </div>
           <div class="testimonial-card">
             <i class="fas fa-quote-right testimonial-card__quote"></i>
-            <p class="testimonial-card__text">"Finally, healthy instant food that actually tastes real. My go-to for busy days."</p>
+            <p class="testimonial-card__text">"Finally, healthy instant food that actually tastes real. My go-to for busy days. The lentil stew is incredible."</p>
             <strong class="testimonial-card__author">— David T., Nairobi</strong>
           </div>
         </div>
@@ -1091,7 +1299,7 @@
     <!-- CTA -->
     <section class="section">
       <div class="container">
-        <div class="cta">
+        <div class="cta-section">
           <h2 class="section__title">Ready to Taste Ethiopia?</h2>
           <p class="section__subtitle">Find Zede products at stores near you or contact us for wholesale inquiries.</p>
           <a href="#" class="btn btn--primary btn--lg" onclick="navigateTo('contact'); return false;">Get in Touch <i class="fas fa-phone"></i></a>
@@ -1156,7 +1364,7 @@
           </div>
         </div>
         <div class="text-center mt-40 p-20 bg-light">
-          <p><i class="fas fa-box"></i> <strong>Also Available:</strong> Cereal/Legume Base Mix (Pumpy & Pour variations)</p>
+          <p style="color:var(--gold-deep);"><i class="fas fa-box"></i> <strong>Also Available:</strong> Cereal/Legume Base Mix (Pumpy & Pour variations)</p>
         </div>
       </div>
     </section>
@@ -1176,14 +1384,13 @@
           <div class="about-snippet__text">
             <h2 class="section__title section__title--left">Our Story</h2>
             <p>At <strong>Leuleo Instant Foods</strong>, we believe everyone deserves access to real, wholesome Ethiopian cuisine — no matter how busy life gets. That's why we created <strong>Zede Ethiopian Instant Foods</strong>.</p>
-            <p>Born in the vibrant city of Addis Ababa, Zede captures the soul of Ethiopian cooking in convenient, instant formats. Our tagline <em>"HEPAATREY & MYRITOM GOTHT"</em> reflects our core promise: <strong>Tasty, Instant and Hassle Free.</strong></p>
+            <p>Born in the vibrant city of Addis Ababa, Zede captures the soul of Ethiopian cooking in convenient, instant formats. Our recipes draw from generations of tradition, using authentic spice blends like berbere — now ready in just five minutes.</p>
+            <p>Our tagline <em>"HEPAATREY & MYRITOM GOTHT"</em> reflects our core promise: <strong>Tasty, Instant and Hassle Free.</strong></p>
           </div>
-          <!-- IMAGE PLACEHOLDER -->
           <div class="about-snippet__image">
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Replace with<br>Your Image</span>
-            </div>
+            <img src="https://images.unsplash.com/photo-1604329756574-bda80af94ad0?w=800&h=600&fit=crop&auto=format" 
+                 alt="Ethiopian food platter"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-placeholder\' style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FBF0D9,#F5E0B8);color:#B89860;border-radius:28px;\'><i class=\'fas fa-image\' style=\'font-size:3rem;opacity:0.5;\'></i></div>';">
           </div>
         </div>
       </div>
@@ -1216,19 +1423,37 @@
       <div class="container">
         <div class="recipe-grid">
           <div class="recipe-card">
-            <div class="recipe-card__image"><i class="fas fa-utensils" style="font-size:3rem; opacity:0.3; color:#B89860;"></i></div>
-            <h3>Berbere Pasta</h3>
-            <p>Mix Spicy Berbere Stew with your favorite pasta for a quick Ethiopian-Italian fusion.</p>
+            <div class="recipe-card__image">
+              <img src="https://images.unsplash.com/photo-1617196034796-73dfa7a14aa5?w=500&h=350&fit=crop&auto=format" 
+                   alt="Berbere Pasta"
+                   onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#FBF0D9,#F5E0B8)';">
+            </div>
+            <div class="recipe-card__body">
+              <h3>Berbere Pasta</h3>
+              <p>Mix Spicy Berbere Stew with your favorite pasta for a quick Ethiopian-Italian fusion.</p>
+            </div>
           </div>
           <div class="recipe-card">
-            <div class="recipe-card__image"><i class="fas fa-utensils" style="font-size:3rem; opacity:0.3; color:#B89860;"></i></div>
-            <h3>Injera Roll-Ups</h3>
-            <p>Spoon warm Lentil Stew onto fresh injera, roll, and enjoy a handheld feast.</p>
+            <div class="recipe-card__image">
+              <img src="https://images.unsplash.com/photo-1567582319158-e1b6f0964e37?w=500&h=350&fit=crop&auto=format" 
+                   alt="Injera Roll-Ups"
+                   onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#FBF0D9,#F5E0B8)';">
+            </div>
+            <div class="recipe-card__body">
+              <h3>Injera Roll-Ups</h3>
+              <p>Spoon warm Lentil Stew onto fresh injera, roll, and enjoy a handheld feast.</p>
+            </div>
           </div>
           <div class="recipe-card">
-            <div class="recipe-card__image"><i class="fas fa-utensils" style="font-size:3rem; opacity:0.3; color:#B89860;"></i></div>
-            <h3>Stew-Stuffed Bread</h3>
-            <p>Fill warm pita or bread rolls with Minced Meat Stew for a hearty snack.</p>
+            <div class="recipe-card__image">
+              <img src="https://images.unsplash.com/photo-1604329756574-bda80af94ad0?w=500&h=350&fit=crop&auto=format" 
+                   alt="Stew-Stuffed Bread"
+                   onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#FBF0D9,#F5E0B8)';">
+            </div>
+            <div class="recipe-card__body">
+              <h3>Stew-Stuffed Bread</h3>
+              <p>Fill warm pita or bread rolls with Minced Meat Stew for a hearty snack.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1313,7 +1538,6 @@
         <p>&copy; 2026 Zede Ethiopian Instant Foods — Leuleo Instant Foods. All rights reserved.</p>
       </div>
     </div>
-    <!-- DEVELOPER CREDIT -->
     <div class="developer-credit">
       <span>Developed by</span> <a href="https://addispower.pages.dev/" target="_blank" rel="noopener noreferrer">addispower.pages.dev</a>
     </div>
@@ -1321,122 +1545,69 @@
 
   <!-- ==================== SCRIPTS ==================== -->
   <script>
-    // ============================================
-    // PAGE NAVIGATION SYSTEM
-    // ============================================
     function navigateTo(pageName) {
-      // Hide all pages
-      document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('page--active');
-      });
-
-      // Show selected page
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('page--active'));
       const targetPage = document.getElementById('page-' + pageName);
-      if (targetPage) {
-        targetPage.classList.add('page--active');
-      }
+      if (targetPage) targetPage.classList.add('page--active');
 
-      // Update active nav link
       document.querySelectorAll('.nav__link').forEach(link => {
         link.classList.remove('nav__link--active');
-        if (link.getAttribute('data-page') === pageName) {
-          link.classList.add('nav__link--active');
-        }
+        if (link.getAttribute('data-page') === pageName) link.classList.add('nav__link--active');
       });
 
-      // Close mobile menu if open
       const navMenu = document.getElementById('nav-menu');
       const navToggle = document.getElementById('nav-toggle');
       if (navMenu && navMenu.classList.contains('show')) {
         navMenu.classList.remove('show');
         const icon = navToggle.querySelector('i');
-        if (icon) {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
+        if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
       }
-
-      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // ============================================
-    // MOBILE NAVIGATION TOGGLE
-    // ============================================
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('show');
         const icon = navToggle.querySelector('i');
         if (icon) {
-          if (navMenu.classList.contains('show')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
         }
       });
     }
 
-    // ============================================
-    // CONTACT FORM HANDLING
-    // ============================================
     function handleFormSubmit(event) {
       event.preventDefault();
-
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
       const formFeedback = document.getElementById('formFeedback');
-
       if (!name || !email || !message) {
-        showFeedback('Please fill in all required fields.', 'error');
-        return;
-      }
-
-      if (!isValidEmail(email)) {
-        showFeedback('Please enter a valid email address.', 'error');
-        return;
-      }
-
-      showFeedback('✅ Thank you for your message! We will get back to you soon.', 'success');
-      document.getElementById('contactForm').reset();
-
-      setTimeout(() => {
-        if (formFeedback) {
-          formFeedback.style.display = 'none';
-        }
-      }, 5000);
-    }
-
-    function showFeedback(message, type) {
-      const formFeedback = document.getElementById('formFeedback');
-      if (!formFeedback) return;
-
-      formFeedback.textContent = message;
-      formFeedback.style.display = 'block';
-
-      if (type === 'success') {
-        formFeedback.style.background = '#E8F5E9';
-        formFeedback.style.color = '#2D5A27';
-        formFeedback.style.border = '1px solid #A5D6A7';
-      } else {
+        formFeedback.style.display = 'block';
         formFeedback.style.background = '#FFF3E0';
         formFeedback.style.color = '#B07838';
         formFeedback.style.border = '1px solid #F4C07A';
+        formFeedback.textContent = 'Please fill in all required fields.';
+        return;
       }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formFeedback.style.display = 'block';
+        formFeedback.style.background = '#FFF3E0';
+        formFeedback.style.color = '#B07838';
+        formFeedback.style.border = '1px solid #F4C07A';
+        formFeedback.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      formFeedback.style.display = 'block';
+      formFeedback.style.background = '#E8F5E9';
+      formFeedback.style.color = '#2D5A27';
+      formFeedback.style.border = '1px solid #A5D6A7';
+      formFeedback.textContent = '✅ Thank you! Your message has been sent. We'll get back to you soon.';
+      document.getElementById('contactForm').reset();
+      setTimeout(() => { formFeedback.style.display = 'none'; }, 6000);
     }
-
-    function isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
-    }
-
-    console.log('✅ Zede Ethiopian Instant Foods — Soft Golden Theme — Ready!');
   </script>
 </body>
 </html>
