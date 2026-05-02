@@ -1,4 +1,4 @@
-# Zede Ethiopian Instant Foods
+# Ethiopian Instant Foods
 
 **Tasty, Instant and Hassle Free** 🍲
 
